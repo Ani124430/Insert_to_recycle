@@ -64,7 +64,9 @@ button{
     text-align: center;
 }
 
-
+.img_ai_response{
+    
+}
 #image_input {
     display: none;
 }

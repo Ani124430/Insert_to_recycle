@@ -13,14 +13,69 @@
         background-size: cover;
         background-attachment: fixed;
     }
-    .header {
-        height: 6rem;
-        display: flex;
-        align-items: center;
-         background: rgb(67, 43, 21);
-        padding: 1rem 0;
-    }
+   .header {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 1fr;
+    align-items: center;
+    background: rgb(67, 43, 21);
+    padding: 1rem 2rem;
+}
 
+.logo {
+    font-size: 3.5rem;
+    justify-self: start;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    justify-self: center;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.7rem;
+}
+
+.nav a:hover {
+    color: #291707;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-self: end; 
+}
+
+.profile-pic {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: url(../Images/1000005692.png) center/cover;
+    border: 0.3rem solid rgb(43, 22, 4);
+}
+
+.plus-btn {
+    font-size: 4rem;
+    width: 3.7rem;
+    padding-top:1rem ;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    height: 3.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10%;
+    color: white;
+    text-decoration: none;
+}
+
+.plus-btn:hover {
+    background: #331e01;
+}
     .profile-pic {
         width: 2.8rem;
         height: 2.8rem;
@@ -50,14 +105,14 @@
     .left {
         display: flex;
         flex-direction: column;
-        background: rgba(43, 22, 4, 0.44);
+        background:  rgba(150, 123, 65, 0.572);
         padding: 1rem;
         border-radius: 1.2rem;
         gap: 2rem;
         margin-left: 2rem;
     }
     .card {
-        background: rgba(43, 22, 4, 0.605);
+        background:  rgba(43, 22, 4, 0.378);
         padding: 2rem;
         border-radius: 15px;
         box-shadow: 0 10px 20px rgba(0,0,0,0.3);
@@ -74,7 +129,7 @@
         display: flex;
         gap: 15px;
         align-items: center;
-        background: rgb(67, 43, 21);
+        background: rgba(67, 43, 21, 0.78);
         border-radius: 10px;
         padding: 10px;
         margin-bottom: 10px;
@@ -136,7 +191,7 @@
     text-align: center;
     margin-top: 1rem;
     border-radius:1rem ;
-    background-color: rgba(150, 123, 65, 0.572);;
+    background-color: rgba(150, 123, 65, 0.572);
     border: solid 1.5rem rgba(43, 22, 4, 0.286);
     height: 20rem;
     padding: 4rem;
@@ -160,10 +215,10 @@
 .profile-info button{
     font-family: 'Pixel';
     border-radius: 0.5rem;
-    background-color: rgb(67, 43, 21);
+    background-color: rgba(67, 43, 21, 0.78);
     border: none;
     color: white;
-    padding: 0.5rem;
+    padding: 1rem;
     font-size: 2rem;
 }
 .cloud {
