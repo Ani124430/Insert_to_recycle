@@ -25,13 +25,11 @@ header{
     align-items: center;
     background: rgb(79, 42, 9);
     padding: 0.1rem;
-    border-radius: 0.5rem;
     height: 8rem;
     font-size: 2rem;
 }
 
 #tree{
-    width: 35rem;
-    margin-top: 3.5rem;
-    margin-left: 30rem;
+    width: 38.5rem;
+    margin-left: 28rem;
 }
