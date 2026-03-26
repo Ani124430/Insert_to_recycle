@@ -137,7 +137,7 @@
     }
 
     .project:hover {
-       background: rgb(43, 22, 4);
+       background: rgba(43, 22, 4, 0.701);
     }
 
     .project img {
