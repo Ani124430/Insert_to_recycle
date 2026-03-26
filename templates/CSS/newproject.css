@@ -33,7 +33,7 @@ header{
 }
 
 
-#back{
+#home{
     text-decoration: none;
     font-size: 2rem;
     position: absolute;
@@ -47,7 +47,7 @@ header{
 }
 
 
-#back:hover{
+#home:hover{
     background-color: #331e01;
 }
 
@@ -64,6 +64,11 @@ button{
     text-align: center;
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 98d991ad2ef382378924b47298f08b6c4df73445
 #image_input {
     display: none;
 }
