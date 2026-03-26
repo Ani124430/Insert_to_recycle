@@ -36,11 +36,12 @@ header{
 .leaderboard{
     border: solid rgb(79, 42, 9) 1rem;
     border-radius: 1rem;
-    margin: 3rem 3rem 26rem 3rem;
+    margin: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 1rem;
     padding: 1rem;
 }
