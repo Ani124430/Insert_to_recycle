@@ -39,9 +39,9 @@ header{
 
 #lb_button{
     position: absolute;
-    top: 13.5rem;
-    left: 37.5rem;
-    font-size: 3rem;
+    top: 16.4rem;
+    left: 43.5rem;
+    font-size: 4rem;
     text-decoration: none;
     color: rgb(0, 0, 0);
 }
@@ -56,7 +56,7 @@ header{
     left: 48rem;
     position: absolute;
      background-color: rgba(255, 255, 255,0);
-    padding: 12px 25px;
+    padding: 1rem 2.1rem;
     color: #000000;
     font-family: 'Pixel';
     font-size: 4rem;
@@ -70,7 +70,7 @@ header{
     left: 45rem;
     position: absolute;
      background-color: rgba(255, 255, 255,0);
-    padding: 12px 25px;
+    padding: 1rem 2.1rem;
     color: #000000;
     font-family: 'Pixel';
     font-size: 3.7rem;
@@ -102,8 +102,8 @@ header{
 
 .modal-c{
     position: relative;
-    width: 505px;
-    height: 700px;
+    width: 32rem;
+    height: 44rem;
     background: rgba(57, 33, 6, 0.764);
 }
 
@@ -115,39 +115,39 @@ header{
     background-size:cover;
     padding: 3rem;
     text-align: center;
-    height: 600px;
+    height: 37rem;
 }
 
 
 .title {
     font-family: 'Minecraft';
-    font-size: 40px;
+    font-size: 3rem;
     color: #070707;
-    margin: 30px auto 30px auto;
+    margin: 2.5rem auto 2.5rem auto;
     display: inline-block;
 }
 
 
 .modal-conten input {
     width: 80%;
-    padding: 12px;
-    margin: 10px 0;
+    padding: 1.2rem;
+    margin: 0.7rem 0;
     background: #3e2f15;
-    border: 2px solid #d9bc8c;
+    border: 0.2rem solid #d9bc8c;
     color: #000000;
     font-family: 'Minecraft';
-    font-size: 18px;
+    font-size: 1.2rem;
 }
 
 
 .modal-conten button {
-    margin-top: 15px;
-    padding: 12px 25px;
+    margin-top: 1.2rem;
+    padding: 0.8rem 2rem;
     background: rgb(61, 46, 21);
-    border: 2px solid #d9bc8c;
+    border: 0.2rem solid #d9bc8c;
     color: #050505;
     font-family: 'Minecraft';
-    font-size: 22px;
+    font-size: 1.4rem;
     cursor: pointer;
 }
 
@@ -164,7 +164,7 @@ header{
 
 .switch {
     display: block;
-    margin-top: 15px;
+    margin-top: 1rem;
     color: #0c0c0c;
     font-family: 'Minecraft';
     cursor: pointer;
@@ -178,35 +178,11 @@ header{
 
 .close-btn {
     position: absolute;
-    top: 10px;
-    right: 15px;
+    top: 0.8rem;
+    right: 1.1rem;
     color: #070707;
-    font-size: 30px;
+    font-size: 2.5rem;
     cursor: pointer;
-}
-
-
-.profile-box {
-    display: none;
-        position: absolute;
-        top: 38%;
-        left: 33%;
-        width: 625px;
-        height: 340px;
-        background: rgba(255, 255, 255, 0.165);
-        color: rgb(0, 0, 0);
-         overflow: hidden; 
-         padding: 25px;
-}
-
-
-.profile-content {
-    width: 100%;
-        padding: 3px;
-        flex-direction: column;
-        background:#261e06;
-        display: flex;
-        height: 100%;
 }
 
 
