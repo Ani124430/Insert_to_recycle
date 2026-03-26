@@ -33,7 +33,7 @@ header{
 }
 
 
-#back{
+#home{
     text-decoration: none;
     font-size: 2rem;
     position: absolute;
@@ -47,7 +47,7 @@ header{
 }
 
 
-#back:hover{
+#home:hover{
     background-color: #331e01;
 }
 
@@ -64,9 +64,8 @@ button{
     text-align: center;
 }
 
-.img_ai_response{
-    
-}
+
+
 #image_input {
     display: none;
 }
