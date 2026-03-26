@@ -8,15 +8,30 @@
 
 body{
     margin: 0rem;
-    background-image: url(../Images/);
-    background-repeat: no-repeat;
     font-family: 'Pixel';
 }
+
+
+main{
+    background-image: url(../Images/1000005692.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
 header{
     display: flex;
     justify-content: center;
+    align-items: center;
     background: rgb(79, 42, 9);
     padding: 0.1rem;
     border-radius: 0.5rem;
+    height: 8rem;
+    font-size: 2rem;
+}
+
+#tree{
+    width: 35rem;
+    margin-top: 3.5rem;
+    margin-left: 30rem;
 }
