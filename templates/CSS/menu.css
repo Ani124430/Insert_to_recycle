@@ -33,3 +33,17 @@ header{
     width: 38.5rem;
     margin-left: 28rem;
 }
+
+
+#lb_button{
+    position: absolute;
+    top: 13.5rem;
+    left: 37.5rem;
+    font-size: 3rem;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+#lb_button:hover{
+    color: rgb(32, 20, 1);
+}
