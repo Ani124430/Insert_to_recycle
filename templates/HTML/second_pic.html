@@ -31,13 +31,13 @@ body{
 
 
 main {
+    background-image: url("../Images/1000005692.png ");
     background-size: cover;
     min-height: 90vh;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    gap: 5rem;
-    padding: 2rem;
+    gap: 10rem;
 }
 
 
@@ -60,6 +60,7 @@ main {
 
 
 .top-row {
+    margin-top: 2.5rem;
     display: flex;
     flex-direction: row;
     justify-self: space-evenly;
@@ -67,14 +68,14 @@ main {
 
 
 .tag {
-    width: 15rem;
-    height: 15rem;
+    width: 18rem;
+    height: 18rem;
     border: solid 0.3rem rgb(79, 59, 30);
 }
 .tag1{
     background-color: rgba(79, 59, 30, 0.528);
-    height: 15rem;
-    width: 15rem;
+    height: 18rem;
+    width: 18rem;
     border: solid 0.3rem rgb(79, 59, 30);
 }
 
@@ -129,24 +130,51 @@ input[type="file"] {
 }
 
 #btn-upload-file {
+
     background: rgb(119, 89, 39);
-    padding: 1rem 1.5rem;
+    padding: 2.5rem 2rem;
     border-radius: 0.7rem;
-    font-size: 1.2rem;
+    font-size: 2rem;
     cursor: pointer;
     text-align: center;
     border: none;
     color: white;
-    transition: 0.3s;
-    margin-left: 2rem;
+    position: relative;
+    left: 0.4rem;
+    top: 8rem;
+    width: 6rem;
 }
 
 #btn-upload-file:hover {
     background: rgb(69, 52, 23);
 }
 .ai {
+    position: absolute;
+    top: 26rem;
+    left: 6rem;
     width: 20rem;
     transform: rotate(90deg) translateY(-50%);
+}
+.button1{
+    position: absolute; 
+    width: 20rem;
+    top:80%;
+    left: 75%;
+}
+.button{
+    text-decoration: none;
+    width: 16rem;
+    height: 6rem;
+    top:83%;
+    left: 76.7%;
+    position: absolute;
+    cursor: pointer;
+    border:none;
+    background-color: #00000000;
+    font-size: 2rem;
+}
+.p :hover{
+    color: #52311a;
 }
 </style>
 <body>
@@ -181,11 +209,13 @@ input[type="file"] {
     </div>
       <img src="{% static 'Images/cloud1.png' %}" class="cloud1">
 
-      <img src="{% static 'Images/button.png' %}" class="button">
-      <a href="#"
-        style="position: absolute; top: 87%; font-size: 2.5rem; left:77.5%; text-decoration: none; color: #000;">Save project
-    </a>
 </main>
-
+    <img src="{% static 'Images/button.png' %}" class="button1">
+      <button class="button">
+            <a href="{% url 'profile' %}"
+                style=" text-decoration: none; color: #000;"><p class="p">Save project</p>
+            </a>
+      </button>
+    </img>
 </body>
 </html>
