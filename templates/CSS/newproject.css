@@ -28,9 +28,15 @@ main {
     background: rgba(127, 103, 65, 0.753);
     border-radius: 15px;
     display: flex;
+     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative
+}
+#imageForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .corner-img {
     position: absolute;
@@ -60,7 +66,8 @@ input[type="file"] {
     text-align: center;
     margin-top: 11.5rem;
     margin-bottom: 11.5rem;
-    margin-left: 2rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
 }
 
 #btn-upload-file:hover {
@@ -110,4 +117,26 @@ input[type="file"] {
     top: 64%;
     left: 45%;
     filter: drop-shadow(0 1rem 1rem rgba(0,0,0,0.5));
+}
+.button1{
+    position: absolute; 
+    width: 20rem;
+    top:80%;
+    left: 75%;
+}
+.button{
+    font-family: 'Pixel';
+    text-decoration: none;
+    width: 16rem;
+    height: 6rem;
+    top:83%;
+    left: 76.7%;
+    position: absolute;
+    cursor: pointer;
+    border:none;
+    background-color: #00000000;
+    font-size: 2rem;
+}
+.button :hover{
+    color: #52311a;
 }
