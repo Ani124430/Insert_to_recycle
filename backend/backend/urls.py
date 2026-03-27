@@ -23,8 +23,9 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('leaderboard/', views.leaderboard, name='leaderboard'),
-    
+    path('leaderboardes/', views.leaderboardes, name='leaderboardes'), 
+    path('profile/', views.profile, name='profile'),
+    path('newproject/', views.newproject, name='newproject'),
 ]
 
 if settings.DEBUG:

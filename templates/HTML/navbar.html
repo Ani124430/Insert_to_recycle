@@ -4,12 +4,12 @@
 
 <div class="nav">
     <a href="{% url 'index' %}">Menu</a>
-    <a href="leaderboardes.html">Leaderboard</a>
-    <a href="profile.html">Profile</a>
+    <a href="{% url 'leaderboardes' %}">Leaderboard</a>
+    <a href="{% url 'profile' %}">Profile</a>
 </div>
 
-    <div class="user">
-        <div class="profile-pic"></div>
-        <a href="newproject.html" class="plus-btn">+</a>
-    </div>
+<div class="user">
+    <div class="profile-pic"></div>
+    <a href="{% url 'newproject' %}" class="plus-btn">+</a>
+</div>
 </div>
