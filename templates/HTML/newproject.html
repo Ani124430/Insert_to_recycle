@@ -17,20 +17,47 @@
     <div class="left">
         <img src="{% static 'Images/frame.png' %}" class="corner-img top-right">
     <img src="{% static 'Images/frame.png' %}" class="corner-img bottom-left">
-        <form id="imageForm">
-            <label for="image_input" id="btn-upload-file">
-                Upload Image
-            </label>
-            <input type="file" id="image_input" required>
+        <form id="imageForm" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="image_input" id="btn-upload-file">Upload Image</label>
+            <input type="file" id="image_input" name="image" accept="image/*" required>
+            <img id="preview" src="#" alt="Preview" style="display:none;max-width:90%;max-height:10rem;margin:0.5rem auto;display:none;border-radius:6px;">
+            <input type="text" name="title" placeholder="Title" style="display:block;width:80%;margin:0.5rem auto;padding:0.4rem;">
+            <input type="text" name="desc" placeholder="Description (optional)" style="display:block;width:80%;margin:0.5rem auto;padding:0.4rem;">
+            <button type="submit" id="analyze-btn" style="display:none;margin:0.5rem auto;padding:0.5rem 1.5rem;cursor:pointer;">Analyze</button>
         </form>
+        {% if error %}<p style="color:red;text-align:center;margin-top:0.5rem;">{{ error }}</p>{% endif %}
+        <script>
+            document.getElementById('image_input').addEventListener('change', function() {
+                const file = this.files[0];
+                if (!file) return;
+                const preview = document.getElementById('preview');
+                preview.src = URL.createObjectURL(file);
+                preview.style.display = 'block';
+                document.getElementById('analyze-btn').style.display = 'block';
+                document.getElementById('btn-upload-file').textContent = 'Change Image';
+            });
+        </script>
     </div>
 
     <div class="ai-box">
-         <img src="{% static 'Images/cloud1.png' %}" class="cloud">
+        <img src="{% static 'Images/cloud1.png' %}" class="cloud">
         <div id="ai">AI Response</div>
-
         <div id="ai-answear">
-            <img src="{% static 'Images/ai_list1.png' %}" class="img_ai_response">
+            {% if ideas %}
+                <ol style="text-align:left;padding:1rem;">
+                    {% for idea in ideas %}
+                    <li style="margin-bottom:0.75rem;">{{ idea }}</li>
+                    {% endfor %}
+                </ol>
+                {% if project %}
+                <p style="margin-top:1rem;">
+                    <a href="{% url 'finish_project' project.id %}" style="color:white;">Upload your result →</a>
+                </p>
+                {% endif %}
+            {% else %}
+                <img src="{% static 'Images/ai_list1.png' %}" class="img_ai_response">
+            {% endif %}
         </div>
     </div>
       <img src="{% static 'Images/cloud1.png' %}" class="cloud1">

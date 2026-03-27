@@ -19,25 +19,24 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
+from aiStuff.views import postFunc
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('register/', include('register.urls')),
-    path('leaderboard/', include('leaderboard.urls')),  
-
+    path('leaderboard/', include('leaderboard.urls')),
     path('profile/', include('saveuserinfo.urls')),
-    path('leaderboardes/', views.leaderboardes, name='leaderboardes'), 
-    path('profile/', views.profile, name='profile'),
-    path('newproject/', views.newproject, name='newproject'),
+    path('ai/', include('aiStuff.urls')),
+    path('draftsAndProjects/', include('draftsAndProjects.urls')),
+    path('leaderboardes/', views.leaderboardes, name='leaderboardes'),
+    path('newproject/', postFunc, name='newproject'),
     path('finishedprojects/', views.finishedprojects, name='finishedprojects'),
     path('unfinprojects/', views.unfinprojects, name='unfinprojects'),
     path('second_pic/', views.second_pic, name='second_pic'),
-    
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_URL)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
 

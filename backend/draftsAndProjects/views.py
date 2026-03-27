@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.models import User
 from .models import Project
+from aiStuff.aiIdeas import score_reuse_result
+from leaderboard.models import Creation
 
 def create_project_view(request):
     if request.method == 'POST':
@@ -42,7 +44,21 @@ def finish_project_view(request, project_id):
         project.newPic = newPic
         project.state = 'finished'
         project.save()
-        return redirect('profile_detail', username=request.user.username)
+
+        result = score_reuse_result(project.oldPic.path, project.newPic.path)
+        Creation.objects.create(
+            user=request.user,
+            title=project.title or f'Project {project.id}',
+            image=project.newPic,
+            ai_score=result['score'],
+            project=project,
+        )
+
+        return render(request, 'HTML/second_pic.html', {
+            'project': project,
+            'score': result['score'],
+            'explanation': result['explanation'],
+        })
     
     context = {'project': project}
     return render(request, 'HTML/second_pic.html', context)

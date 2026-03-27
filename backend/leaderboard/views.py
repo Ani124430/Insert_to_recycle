@@ -3,38 +3,36 @@ from .models import Creation, Rating
 from django.contrib.auth.models import User
 
 def leaderboard_view(request):
-    creations = Creation.objects.all()
+    creations = Creation.objects.select_related('user', 'project').all()
 
-    ai_leaderboard = []
-    user_leaderboard = []
-
-    for c in creations:
-        ai_leaderboard.append({
+    def entry(c, score_key, score_val):
+        return {
             'id': c.id,
             'username': c.user.username,
             'title': c.title,
-            'ai_score': c.ai_score,
-        })
-        user_leaderboard.append({
-            'id': c.id,
-            'username': c.user.username,
-            'title': c.title,
-            'user_score': c.average_user_score(),
-        })
+            score_key: score_val,
+            'result_image': c.image.url if c.image else None,
+            'original_image': c.project.oldPic.url if c.project and c.project.oldPic else None,
+        }
 
-    ai_leaderboard = sorted(ai_leaderboard, key=lambda x: x['ai_score'], reverse=True)
-    user_leaderboard = sorted(user_leaderboard, key=lambda x: x['user_score'], reverse=True)
+    ai_leaderboard = sorted(
+        [entry(c, 'score', c.ai_score) for c in creations],
+        key=lambda x: x['score'], reverse=True
+    )
+    user_leaderboard = sorted(
+        [entry(c, 'score', c.average_user_score()) for c in creations],
+        key=lambda x: x['score'], reverse=True
+    )
 
-    for i, entry in enumerate(ai_leaderboard):
-        entry['rank'] = i + 1
-    for i, entry in enumerate(user_leaderboard):
-        entry['rank'] = i + 1
+    for i, e in enumerate(ai_leaderboard):
+        e['rank'] = i + 1
+    for i, e in enumerate(user_leaderboard):
+        e['rank'] = i + 1
 
-    context = {
+    return render(request, 'HTML/leaderboard.html', {
         'ai_leaderboard': ai_leaderboard,
         'user_leaderboard': user_leaderboard,
-    }
-    return render(request, 'HTML/leaderboard.html', context)
+    })
 
 def rate_creation_view(request, creation_id):
     creation = get_object_or_404(Creation, id=creation_id)

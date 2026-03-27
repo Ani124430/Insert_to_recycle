@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 def signup(request):
     if request.method == 'POST':
@@ -38,6 +39,7 @@ def logout_view(request):
     logout(request)
     return redirect('index')
 
+@login_required
 def profile_view(request):
     user = request.user
     context = {
