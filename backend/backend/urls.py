@@ -25,11 +25,23 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('register/', include('register.urls')),
     path('leaderboard/', include('leaderboard.urls')),  
+
     path('profile/', include('saveuserinfo.urls')),
+    path('leaderboardes/', views.leaderboardes, name='leaderboardes'), 
+    path('profile/', views.profile, name='profile'),
+    path('newproject/', views.newproject, name='newproject'),
+    path('finishedprojects/', views.finishedprojects, name='finishedprojects'),
+    path('unfinprojects/', views.unfinprojects, name='unfinprojects'),
+    path('second_pic/', views.second_pic, name='second_pic'),
     
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_URL)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
+
+   
+
+
 

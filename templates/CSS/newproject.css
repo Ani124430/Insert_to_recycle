@@ -1,0 +1,113 @@
+@font-face {
+    font-family: 'Pixel';
+    src: url('../Images/Minecraft.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    font-family: 'Pixel';
+    background: #1a1a1a;
+}
+
+
+
+main {
+    background-image: url(../Images/1000005692.png);
+    background-size: cover;
+    min-height: 90vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5rem;
+}
+
+.left {
+     margin-left: 9rem;
+    width: 32rem;
+    height: 44rem;
+    background: rgba(127, 103, 65, 0.753);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative
+}
+.corner-img {
+    position: absolute;
+    width: 14rem;
+    opacity: 0.9;
+}
+.top-right {
+    top: -1rem;
+    right: -1rem;
+}
+
+.bottom-left {
+    bottom: -1rem;
+    left: -1rem;
+    transform: rotate(180deg);
+}
+input[type="file"] {
+    display: none;
+}
+
+#btn-upload-file {
+    background: rgb(119, 89, 39);
+    padding: 3rem 6rem;
+    border-radius: 0.7rem;
+    font-size: 2rem;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 11.5rem;
+    margin-bottom: 11.5rem;
+    margin-left: 2rem;
+}
+
+#btn-upload-file:hover {
+    background: rgb(69, 52, 23);
+    color: white;
+}
+
+.ai-box {
+    width: 32rem;
+    height: 42rem;
+    background: rgba(41, 23, 7, 0.9);
+    border-radius: 1.2rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-right: 9rem;
+}
+
+#ai {
+    color: white;
+    font-size: 3rem;
+}
+
+#ai-answear {
+    color: white;
+    text-align: center;
+}
+
+.img_ai_response {
+    height: 40rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+.cloud {
+    position: absolute;
+    width: 20rem;
+    top: -7rem;
+    right: -13rem;
+    filter: drop-shadow(0 1rem 1rem rgba(0,0,0,0.5));
+}
+.cloud1 {
+    position: absolute;
+    width: 25rem;
+    top: 64%;
+    left: 45%;
+    filter: drop-shadow(0 1rem 1rem rgba(0,0,0,0.5));
+}

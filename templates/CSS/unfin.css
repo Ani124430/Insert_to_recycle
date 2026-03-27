@@ -1,0 +1,94 @@
+@font-face {
+    font-family: 'Pixel';
+    src: url('../Images/Minecraft.ttf') format('truetype');
+    font-weight: 100 700;
+    font-style: normal;}
+
+body {
+    background-image: url(../Images/1000005692.png);
+    margin: 0;
+    font-family: 'Pixel';
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+.left {
+    display: flex;
+    flex-direction: column;
+    background: rgba(150, 123, 65, 0.572);
+    padding: 2rem;
+    border-radius: 1.2rem;
+    gap: 2rem;
+    margin-top: 3rem;
+    margin-left: 14rem;
+     margin-right: 14rem;
+    min-height: 70vh; 
+}
+
+.card {
+    background: rgba(43, 22, 4, 0.378);
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.8rem 2rem rgba(0,0,0,0.3);
+    color: #291707;
+    font-size: 2rem;
+    min-height: 16rem; 
+}
+.project {
+    display: flex;
+    gap: 1.8rem;
+    align-items: center;
+
+    background: rgba(67, 43, 21, 0.78);
+    border-radius: 10px;
+
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+
+    transition: 0.3s;
+
+    min-height: 100px; 
+}
+
+.project img {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.project-info p {
+    font-size: 1.6rem;
+     font-family: 'Pixel';
+    color: #291707;
+}
+.cloud {
+    position: absolute;
+    top: 30%; 
+    left: 70%;
+    width: 30rem;
+    height: 35rem;
+    z-index: 10; 
+    pointer-events: none; 
+}
+.stamp1{
+    position: absolute;
+    top: 10.5%; 
+    left: 6%;
+    width: 12rem;
+    height: 12rem;
+    z-index: 10; 
+    pointer-events: none; 
+}
+.piece{
+    position: absolute;
+    top: 4.7%; 
+    left: 15.5rem;
+    width: 35rem;
+    height: 35rem;
+    z-index: 10; 
+    pointer-events: none; 
+}

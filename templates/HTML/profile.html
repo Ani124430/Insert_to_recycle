@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<title>Profile</title>
+    <link rel="stylesheet" href="{% static 'CSS/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
+</head>
+<body>
+
+<div>
+
+   {% include "HTML/navbar.html" %}
+
+</div>
+
+    <div class="main">
+        <img src="{% static 'Images/cloud1.png' %}" class="cloud">
+        <div class="leftt">
+        <p class="t">Your Profile</p>
+        <div class="left">
+            <div class="card">
+                <a class="projects-fin-unfin" href="{% url 'finishedprojects' %}">
+                    <h2 class="projects-fin-unfin-name">Finished Projects</h2>
+                </a>
+                <div class="project">
+                    <img src="{% static 'Images/1000005692.png' %}" alt="Project 1">
+                    <div class="project-info">
+                        <h3>Game UI</h3>
+                        <p>Пълна потребителска интерфейс система</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <a class="projects-fin-unfin" href="{% url 'unfinprojects' %}">
+                    <h2 class="projects-fin-unfin-name">Unfinished Projects</h2>
+                </a>
+                <div class="project">
+                    <img src="{% static 'Images/1000005692.png' %}" alt="Project 3">
+                    <div class="project-info">
+                        <h3>Multiplayer Mode</h3>
+                        <p>Създаване на мултиплейър система</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="right">
+            <div class="banner">
+                <div class="big-profile"></div>
+            </div>
+
+            <div class="profile-info">
+
+                <p class="username">Yanichka_banichka</p>
+                <!--  <div>
+                    <p>Badges</p>
+                    <img>
+                    <img>
+                    <img>
+                    <img>
+                </div> -->
+                <p>Bio </p>
+                <p id="level">Level 1</p>
+                <button>Exit Profile</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,22 +1,94 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insert to recycle</title>
-    <link rel="stylesheet" href="../CSS/menu.css">
+    <link rel="stylesheet" href="{% static 'CSS/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
 </head>
 
 <body>
-    <header>
-        <h1>Insert to recycle</h1>
-    </header>
+    <div>
+    {% include "HTML/navbar.html" %}
 
     <main>
-        <img id="tree" src="../Images/new_arrows.png" alt="Picture of Wooden arrows.">
+        <img id="tree" src="{% static 'Images/new_arrows.png' %}" alt="Picture of Wooden arrows.">
+        <a id="lb_button" href="{% url 'leaderboardes' %}">Leaderboards</a>
+        <button class="btn-login" onclick="openLogin()">LOGIN</button>
+        <button class="btn-register" onclick="openRegister()">REGISTER</button>
+        <div class="moda" id="modal">
+    <div class="modal-c" >
+    <div class="modal-conten">
+        <span class="close-btn" onclick="closeLogin()">×</span>
+        <div id="loginForm">
+            <h3 class="title">LOGIN</h3>
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <button>ENTER</button>
+
+            <span class="switch" onclick="showRegister()">
+                DON'T HAVE AN ACCOUNT?
+            </span>
+        </div>
+
+        <div id="registerForm" class="hidden">
+            <h3 class="title">Register</h3>
+            <input type="text" placeholder="Username">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <button onclick="registerUser()">REGISTRATION</button>
+
+            <span class="switch" onclick="showLogin()">
+                HAVE AN ACCOUNT?
+            </span>
+        </div>
+    </div>
+</div>
+</div>
     </main>
 
-
 </body>
+<script>
+    function openModal() {
+    document.getElementById("modal").style.display = "block";
+    document.getElementById("tree").style.display = "none";
+}
+    function closeLogin() {
+    document.getElementById("modal").style.display = "none";
+     document.getElementById("tree").style.display = "block"; 
+}
+    function showRegister() {
+    document.getElementById("loginForm").classList.add("hidden");
+    document.getElementById("registerForm").classList.remove("hidden");
+}
+window.onload = function() {
+    showLogin();
+}
+function openLogin() {
+    openModal();
+    showLogin();
+}
 
+function openRegister() {
+    openModal();
+    showRegister();
+}
+    function showLogin() {
+    document.getElementById("registerForm").classList.add("hidden");
+    document.getElementById("loginForm").classList.remove("hidden");
+}
+    function openProfile() {
+    document.getElementById('profileBox').style.display = 'block';
+
+}
+    function closeProfile() {
+    document.getElementById('profileBox').style.display = 'none';
+}
+    function openLoginFromProfile() {
+    closeProfile();
+    openModal(); 
+}
+</script>
 </html>

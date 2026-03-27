@@ -1,0 +1,191 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
+    <title>Insert to recycle</title>
+</head>
+<style>
+
+@font-face {
+    font-family: 'Pixel';
+    src: url("{% static 'Images/Minecraft.ttf' %}") format('truetype');
+    font-weight: 100 700;
+    font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Pixel';
+}
+
+
+body{
+    margin: 0rem;
+    font-family: 'Pixel';
+}
+
+
+main {
+    background-size: cover;
+    min-height: 90vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5rem;
+    padding: 2rem;
+}
+
+
+.top-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.left {
+    width: 45rem;
+    height: 44rem;
+    background: rgba(127, 103, 65, 0.753);
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.top-row {
+    display: flex;
+    flex-direction: row;
+    justify-self: space-evenly;
+}
+
+
+.tag {
+    width: 15rem;
+    height: 15rem;
+    border: solid 0.3rem rgb(79, 59, 30);
+}
+.tag1{
+    background-color: rgba(79, 59, 30, 0.528);
+    height: 15rem;
+    width: 15rem;
+    border: solid 0.3rem rgb(79, 59, 30);
+}
+
+
+.ai-box {
+    width: 32rem;
+    height: 42rem;
+    background: rgba(41, 23, 7, 0.9);
+    border-radius: 1.2rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-right: 9rem;
+}
+
+#ai {
+    color: white;
+    font-size: 3rem;
+}
+
+#ai-answear {
+    color: white;
+    text-align: center;
+}
+
+.img_ai_response {
+    height: 40rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+.cloud {
+    position: absolute;
+    width: 20rem;
+    top: -7rem;
+    right: -13rem;
+    filter: drop-shadow(0 1rem 1rem rgba(0,0,0,0.5));
+}
+.cloud1 {
+    position: absolute;
+    width: 25rem;
+    top: 64%;
+    left: 45%;
+    filter: drop-shadow(0 1rem 1rem rgba(0,0,0,0.5));
+}
+
+
+input[type="file"] {
+    display: none;
+}
+
+#btn-upload-file {
+    background: rgb(119, 89, 39);
+    padding: 1rem 1.5rem;
+    border-radius: 0.7rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    color: white;
+    transition: 0.3s;
+    margin-left: 2rem;
+}
+
+#btn-upload-file:hover {
+    background: rgb(69, 52, 23);
+}
+.ai {
+    width: 20rem;
+    transform: rotate(90deg) translateY(-50%);
+}
+</style>
+<body>
+
+    {% include "HTML/navbar.html" %}
+
+<main>
+<div class="left">
+    <div class="top-row">
+        <div>
+            <img src="{% static 'Images/1000005692.png' %}" class="tag">
+        </div>
+        <div class="tag1">
+            <form action="post" enctype="multipart/form-data">
+                <label for="image_input" id="btn-upload-file">
+                    Upload Image
+                </label>
+                <input type="file" id="image_input" required>
+            </form>
+        </div>
+    </div>
+    <img src="{% static 'Images/ai_tag.png' %}" class="ai">
+</div>
+
+    <div class="ai-box">
+         <img src="{% static 'Images/cloud1.png' %}" class="cloud">
+        <div id="ai">AI Rating</div>
+
+        <div id="ai-answear">
+            <img src="{% static 'Images/ai_list1.png' %}" class="img_ai_response">
+        </div>
+    </div>
+      <img src="{% static 'Images/cloud1.png' %}" class="cloud1">
+
+      <img src="{% static 'Images/button.png' %}" class="button">
+      <a href="#"
+        style="position: absolute; top: 87%; font-size: 2.5rem; left:77.5%; text-decoration: none; color: #000;">Save project
+    </a>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New project</title>
+    <link rel="stylesheet" href="{% static 'CSS/newproject.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
+</head>
+
+<body>
+
+   {% include "HTML/navbar.html" %}
+
+<main>
+    <div class="left">
+        <img src="{% static 'Images/frame.png' %}" class="corner-img top-right">
+    <img src="{% static 'Images/frame.png' %}" class="corner-img bottom-left">
+        <form id="imageForm">
+            <label for="image_input" id="btn-upload-file">
+                Upload Image
+            </label>
+            <input type="file" id="image_input" required>
+        </form>
+    </div>
+
+    <div class="ai-box">
+         <img src="{% static 'Images/cloud1.png' %}" class="cloud">
+        <div id="ai">AI Response</div>
+
+        <div id="ai-answear">
+            <img src="{% static 'Images/ai_list1.png' %}" class="img_ai_response">
+        </div>
+    </div>
+      <img src="{% static 'Images/cloud1.png' %}" class="cloud1">
+</main>
+
+</body>
+</html>

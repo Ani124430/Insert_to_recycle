@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unfinished projects</title>
+    <link rel="stylesheet" href="{% static 'CSS/unfin.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
+</head>
+
+<body>
+    <style>
+.finish-box {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    color: white;
+    margin-left: 20rem;
+}
+
+
+.finish-box:hover {
+    background: #331e01;
+}
+
+
+.finish-box .plus {
+    font-size: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-self: space-evenly;
+    gap: 1rem;
+}
+
+
+.finish-box p {
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 1.7rem;
+}
+
+    </style>
+    <div>
+
+    {% include "HTML/navbar.html" %}
+    
+    <img src="{% static 'Images/stamps1.png' %}" class="stamp1">
+    <img src="{% static 'Images/cloud1.png' %}" class="cloud">
+    <div class="left">
+            <div class="card">
+                <h2>Unfinished Projects</h2>
+                <div class="project">
+                    <img src="{% static 'Images/1000005692.png' %}" alt="Project 1">
+                    <div class="project-info">
+                         <h3>AI ideas</h3>
+                        <p>Some ideas that AI gave you</p>
+                    </div>
+                    <a href="{% url 'second_pic' %}" class="finish-box">
+                    <span class="plus">+</span>
+                     <p>Finish your project</p></a>
+                </div>
+            </div>
+    </div>
+</body>
+</html>
