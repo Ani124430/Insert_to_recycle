@@ -1,82 +1,172 @@
+
 @font-face {
     font-family: 'Pixel';
     src: url('../Images/Minecraft.ttf') format('truetype');
-    font-weight: 100 700;
-    font-style: normal;
 }
 
-
-body{
-    margin: 0rem;
+body {
+    margin: 0;
     font-family: 'Pixel';
+    background: #1a1a1a;
 }
 
+.header {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 1fr;
+    align-items: center;
+    background: rgb(67, 43, 21);
+    padding: 1rem 2rem;
+}
 
-main{
-    background-image: url(../Images/1000005692.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+.logo {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.nav {
     display: flex;
     justify-content: center;
-    gap: 15rem;
+    gap: 3rem;
 }
 
+.nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
 
-header{
+.nav a:hover {
+    color: #ffb347;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-self: end;
+}
+
+.profile-pic {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: url(../Images/1000005692.png) center/cover;
+    border: 0.2rem solid #000;
+}
+
+.plus-btn {
+    font-size: 2rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.plus-btn:hover {
+    background: #8a5a2b;
+}
+
+main {
+    background-image: url(../Images/1000005692.png);
+    background-size: cover;
+    min-height: 90vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5rem;
+    padding: 2rem;
+}
+
+.left {
+     margin-left: 9rem;
+    width: 32rem;
+    height: 44rem;
+    background: rgba(127, 103, 65, 0.753);
+    border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(79, 42, 9);
-    padding: 0.1rem;
-    height: 8rem;
-    font-size: 2rem;
+    position: relative
+}
+.corner-img {
+    position: absolute;
+    width: 14rem;
+    opacity: 0.9;
+}
+.top-right {
+    top: -1rem;
+    right: -1rem;
 }
 
-
-button{
-    font-size: 4rem;
-    margin: 6rem 0rem 6rem 0rem;
-    padding: 10.25rem 6rem 10.25rem 6rem;
+.bottom-left {
+    bottom: -1rem;
+    left: -1rem;
+    transform: rotate(180deg);
 }
-
-
-#ai{
-    font-size: 3rem;
-    margin-top: 4rem;
-    text-align: center;
-}
-
-
-#image_input {
+input[type="file"] {
     display: none;
 }
 
-
 #btn-upload-file {
-    display: inline-block;
-    background-color: rgb(97, 55, 4);
-    color: white;
-    font-size: 4rem;
-    padding: 4rem;
-    border: solid #331e01 1rem;
-    border-radius: 1rem;
+    background: rgb(119, 89, 39);
+    padding: 1rem 2rem;
+    border-radius: 10px;
     cursor: pointer;
-    text-align: center;
-    margin-top: 11.5rem;
-    margin-bottom: 11.5rem;
+    font-size: 2rem;
+    transition: 0.3s;
 }
-
 
 #btn-upload-file:hover {
-    background-color: #331e01;
+     background: rgb(69, 52, 23);
+    color: white;
 }
 
+.ai-box {
+    width: 32rem;
+    height: 42rem;
+    background: rgba(41, 23, 7, 0.9);
+    border-radius: 1.2rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-right: 9rem;
+}
 
-#ai-answear{
-    border: solid 1rem #331e01;
-    padding: 8rem;
-    border: solid #331e01 1rem;
-    border-radius: 1rem;
+#ai {
+    color: white;
+    font-size: 3rem;
+}
+
+#ai-answear {
+    color: white;
     text-align: center;
-    margin-top: 4rem;
+}
+
+.img_ai_response {
+    height: 40rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+.cloud {
+    position: absolute;
+    width: 20rem;
+    top: -7rem;
+    right: -13rem;
+    filter: drop-shadow(0 1rem 1rem rgba(0,0,0,0.5));
+}
+.cloud1 {
+    position: absolute;
+    width: 25rem;
+    top: 64%;
+    left: 45%;
+    filter: drop-shadow(0 1rem 1rem rgba(0,0,0,0.5));
 }
