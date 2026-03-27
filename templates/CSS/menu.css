@@ -41,32 +41,23 @@ main{
 }
 
 
-.btn-login {
-    top: 27rem;
-    left: 48rem;
+#lb_button1 {
+    top: 23rem;
+    left: 50rem;
     position: absolute;
-    background-color: rgba(239, 14, 14, 0);
-    padding: 1rem 2.1rem;
-    color: #000000;
-    font-family: 'Pixel';
     font-size: 4rem;
-    cursor: pointer;
-    border: none;
     text-decoration: none;
+    color: rgb(0, 0, 0);
 }
 
 
-.btn-register {
+#lb_button2 {
      top: 41.5rem;
     left: 45rem;
     position: absolute;
-     background-color: rgba(255, 255, 255,0);
-    padding: 1rem 2.1rem;
-    color: #000000;
-    font-family: 'Pixel';
-    font-size: 3.7rem;
-    cursor: pointer;
-    border: none;
+    font-size: 4rem;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
      transform: rotate(8deg);
 }
 
@@ -82,7 +73,7 @@ main{
 
 
 .moda {
-    display: none;
+    display: block;
     position: fixed;
     top: 20%;
     left: 37%;
@@ -148,10 +139,6 @@ main{
 }
 
 
-.hidden {
-    display: none;
-}
-
 
 .switch {
     display: block;
@@ -169,10 +156,11 @@ main{
 
 .close-btn {
     position: absolute;
-    top: 0.8rem;
-    right: 1.1rem;
-    color: #070707;
-    font-size: 2.5rem;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    color: black;
     cursor: pointer;
 }
 

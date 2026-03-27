@@ -12,17 +12,11 @@
 <body>
     <div>
     {% include "HTML/navbar.html" %}
-
     <main>
         <img id="tree" src="{% static 'Images/new_arrows.png' %}" alt="Picture of Wooden arrows.">
         <a id="lb_button" href="{% url 'leaderboard' %}">Leaderboards</a>
-        <a class="btn-login" href="{% url 'login' %}">LOGIN</a>
-        <a class="btn-register" href="{% url 'register' %}">REGISTER</a>
-            </span>
-        </div>
-    </div>
-</div>
-</div>
+        <a id="lb_button1" href="{% url 'login' %}"><p>LOGIN</p></a>
+        <a id="lb_button2" href="{% url 'register' %}"> REGISTER</a>
     </main>
 
 </body>

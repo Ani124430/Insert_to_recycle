@@ -16,7 +16,11 @@
 </head>
 <body>
     {% include "HTML/navbar.html" %}
-    <div class="form-container">
+   <div class="moda" id="modal">
+    <div class="modal-c" >
+    <div class="modal-conten">
+        <a href="{% url 'index' %}" class="close-btn">×</a>
+         <div id="loginForm">
         <h2>Login</h2>
         {% if error %}<p class="error">{{ error }}</p>{% endif %}
         <form method="post">
@@ -25,7 +29,10 @@
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">LOGIN</button>
         </form>
-        <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+        <a style="text-decoration: none; color: black;" href="{% url 'register' %}">Don't have an account?</a>
+         </div>
     </div>
+    </div>
+   </div>
 </body>
 </html>
