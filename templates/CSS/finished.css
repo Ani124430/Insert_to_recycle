@@ -1,8 +1,16 @@
 @font-face {
     font-family: 'Pixel';
-    src: url('../Images/Minecraft.ttf') format('truetype');
-    font-weight: 100 700;
-    font-style: normal;
+    src: url('../Images/Minecraft.ttf') format('truetype'); 
+}
+
+
+body, h2, h3, p, a {
+    font-family: 'Pixel', sans-serif !important;
+}
+
+
+html{
+    margin: 0;
 }
 
 
@@ -13,6 +21,7 @@ body {
     background-attachment: fixed;
     min-height: 100vh;
     overflow-x: hidden;
+    margin: 0;
 }
 
 
@@ -25,7 +34,7 @@ body {
     gap: 2rem;
     margin-top: 3rem;
     margin-left: 14rem;
-     margin-right: 14rem;
+    margin-right: 14rem;
     min-height: 70vh; 
 }
 
