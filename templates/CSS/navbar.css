@@ -70,3 +70,17 @@
 .plus-btn:hover {
     background: #331e01;
 }
+
+
+.button-logout{
+    background: none;
+    border:none;
+    cursor: pointer;
+    color: white;
+    font: inherit;
+}
+
+
+.button-logout:hover{
+    color: #000000;
+}
