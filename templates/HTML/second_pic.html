@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert to recycle</title>
+</head>
+<style>
+@font-face {
+    font-family: 'Pixel';
+    src: url('../Images/Minecraft.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    font-family: 'Pixel';
+    background: #1a1a1a;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 1fr;
+    align-items: center;
+    background: rgb(67, 43, 21);
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: #ffb347;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-self: end;
+}
+
+.profile-pic {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: url(../Images/1000005692.png) center/cover;
+    border: 0.2rem solid #000;
+}
+
+.plus-btn {
+    font-size: 2rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.plus-btn:hover {
+    background: #8a5a2b;
+}
+
+main {
+    background-image: url(../Images/1000005692.png);
+    background-size: cover;
+    min-height: 90vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5rem;
+    padding: 2rem;
+}
+
+
+.top-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.left {
+    width: 45rem;
+    height: 44rem;
+    background: rgba(127, 103, 65, 0.753);
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.top-row {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.tag {
+    width: 15rem;
+    height: 15rem;
+    border: solid 0.3rem rgb(79, 59, 30);
+}
+.tag1{
+    background-color: rgba(79, 59, 30, 0.528);
+    height: 15rem;
+    width: 15rem;
+    border: solid 0.3rem rgb(79, 59, 30);
+}
+
+
+.ai-box {
+    width: 32rem;
+    height: 42rem;
+    background: rgba(41, 23, 7, 0.9);
+    border-radius: 1.2rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-right: 9rem;
+}
+
+#ai {
+    color: white;
+    font-size: 3rem;
+}
+
+#ai-answear {
+    color: white;
+    text-align: center;
+}
+
+.img_ai_response {
+    height: 40rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+.cloud {
+    position: absolute;
+    width: 20rem;
+    top: -7rem;
+    right: -13rem;
+    filter: drop-shadow(0 1rem 1rem rgba(0,0,0,0.5));
+}
+.cloud1 {
+    position: absolute;
+    width: 25rem;
+    top: 64%;
+    left: 45%;
+    filter: drop-shadow(0 1rem 1rem rgba(0,0,0,0.5));
+}
+
+
+input[type="file"] {
+    display: none;
+}
+
+#btn-upload-file {
+    background: rgb(119, 89, 39);
+    padding: 1rem 1.5rem;
+    border-radius: 0.7rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    color: white;
+    transition: 0.3s;
+}
+
+#btn-upload-file:hover {
+    background: rgb(69, 52, 23);
+    color: white;
+}
+.ai {
+    width: 20rem;
+    transform: rotate(90deg) translateY(-50%);
+}
+</style>
+<body>
+
+<div class="header">
+    <div class="logo">Insert to recycle</div>
+
+    <div class="nav">
+        <a href="#">Menu</a>
+        <a href="#">Leaderboard</a>
+        <a href="#">Profile</a>
+    </div>
+
+    <div class="user">
+        <div class="profile-pic"></div>
+        <a href="newproject.html" class="plus-btn">+</a>
+    </div>
+</div>
+
+<main>
+<div class="left">
+    <div class="top_row">
+        <div>
+            <img src="../Images/1000005692.png" class="tag">
+        </div>
+        <div class="tag1">
+            <form action="post" enctype="multipart/form-data">
+                <label for="image_input" id="btn-upload-file">
+                    Upload Image
+                </label>
+                <input type="file" id="image_input" required>
+            </form>
+        </div>
+    </div>
+    <img src="../Images/ai_tag.png" class="ai">
+</div>
+
+    <div class="ai-box">
+         <img src="../Images/cloud1.png" class="cloud">
+        <div id="ai">AI Rating</div>
+
+        <div id="ai-answear">
+            <img src="../Images/ai_list1.png" class="img_ai_response">
+        </div>
+    </div>
+      <img src="../Images/cloud1.png" class="cloud1">
+</main>
+
+</body>
+</html>
