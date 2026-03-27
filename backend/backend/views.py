@@ -8,4 +8,5 @@ def index(request):
     image_path = os.path.join(settings.BASE_DIR, 'images', 'testImage1.png')
     print(image_path)
     ai_ideas = giveIdea(image_path, use_mock=False)
+    print(ai_ideas)
     return render(request, 'HTML/index.html')
