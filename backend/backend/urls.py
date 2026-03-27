@@ -25,6 +25,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('register/', include('register.urls')),
     path('leaderboard/', include('leaderboard.urls')),  
+    path('profile/', include('saveuserinfo.urls')),
 ]
 
 if settings.DEBUG:
