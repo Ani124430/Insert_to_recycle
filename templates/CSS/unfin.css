@@ -4,80 +4,17 @@
     font-weight: 100 700;
     font-style: normal;}
 
-    body {
-        background-image: url(../Images/1000005692.png);
-        margin: 0;
-        font-family: 'Pixel';
-        color: white;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-    }
-.header {
-    height: 5.9rem;
-    display: grid;
-    grid-template-columns: 1.5fr 2fr 1fr;
-    align-items: center;
-    background: rgb(67, 43, 21);
-    padding: 1rem 2rem;
-}
-
-.logo {
+body {
+    background-image: url(../Images/1000005692.png);
+    margin: 0;
+    font-family: 'Pixel';
     color: white;
-    font-size: 3.5rem;
-    justify-self: start;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-.nav {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    justify-self: center;
-}
 
-.nav a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.7rem;
-}
-
-.nav a:hover {
-    color: #291707;
-}
-
-.user {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    justify-self: end; 
-}
-
-.profile-pic {
-    width: 4.7rem;
-    height: 4.7rem;
-    border-radius: 50%;
-    background: url(../Images/1000005692.png) center/cover;
-    border: 0.5rem solid rgb(43, 22, 4);
-}
-
-.plus-btn {
-    font-size: 4rem;
-    width: 3.7rem;
-    padding-top:1rem ;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    height: 3.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10%;
-    color: white;
-    text-decoration: none;
-}
-
-.plus-btn:hover {
-    background: #331e01;
-}
 .left {
     display: flex;
     flex-direction: column;

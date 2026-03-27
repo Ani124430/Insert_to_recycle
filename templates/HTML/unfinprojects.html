@@ -11,7 +11,7 @@
 
 <body>
     <style>
-        .finish-box {
+.finish-box {
     display: flex;
     gap: 1rem;
     padding: 1rem;
@@ -21,20 +21,28 @@
     margin-left: 20rem;
 }
 
+
 .finish-box:hover {
-    background: #331e01; 
+    background: #331e01;
 }
+
+
 .finish-box .plus {
     font-size: 3rem;
     width: 2.5rem;
     height: 2.5rem;
     display: flex;
+    justify-self: space-evenly;
+    gap: 1rem;
 }
+
+
 .finish-box p {
     margin: 0;
     padding: 0.5rem;
     font-size: 1.7rem;
 }
+
     </style>
     <div>
 
@@ -51,7 +59,7 @@
                          <h3>AI ideas</h3>
                         <p>Some ideas that AI gave you</p>
                     </div>
-                    <a href="#" class="finish-box">
+                    <a href="{% url 'second_pic' %}" class="finish-box">
                     <span class="plus">+</span>
                      <p>Finish your project</p></a>
                 </div>

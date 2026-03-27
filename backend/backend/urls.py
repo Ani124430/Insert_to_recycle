@@ -28,6 +28,7 @@ urlpatterns = [
     path('newproject/', views.newproject, name='newproject'),
     path('finishedprojects/', views.finishedprojects, name='finishedprojects'),
     path('unfinprojects/', views.unfinprojects, name='unfinprojects'),
+    path('second_pic/', views.second_pic, name='second_pic'),
 ]
 
 if settings.DEBUG:

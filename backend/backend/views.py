@@ -18,3 +18,6 @@ def finishedprojects(request):
 
 def unfinprojects(request):
     return render(request, 'HTML/unfinprojects.html')
+
+def second_pic(request):
+    return render(request, 'HTML/second_pic.html')
