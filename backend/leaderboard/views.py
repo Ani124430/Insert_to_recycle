@@ -1,11 +1,8 @@
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from rest_framework import status
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Creation, Rating
 from django.contrib.auth.models import User
 
-@api_view(['GET'])
-def leaderboard(request):
+def leaderboard_view(request):
     creations = Creation.objects.all()
 
     ai_leaderboard = []
@@ -13,11 +10,13 @@ def leaderboard(request):
 
     for c in creations:
         ai_leaderboard.append({
+            'id': c.id,
             'username': c.user.username,
             'title': c.title,
             'ai_score': c.ai_score,
         })
         user_leaderboard.append({
+            'id': c.id,
             'username': c.user.username,
             'title': c.title,
             'user_score': c.average_user_score(),
@@ -31,33 +30,30 @@ def leaderboard(request):
     for i, entry in enumerate(user_leaderboard):
         entry['rank'] = i + 1
 
-    return Response({
+    context = {
         'ai_leaderboard': ai_leaderboard,
         'user_leaderboard': user_leaderboard,
-    })
+    }
+    return render(request, 'HTML/leaderboard.html', context)
 
-@api_view(['POST'])
-def rate_creation(request, creation_id):
-    try:
-        creation = Creation.objects.get(id=creation_id)
-    except Creation.DoesNotExist:
-        return Response({'error': 'Creation not found'}, status=status.HTTP_404_NOT_FOUND)
-
-    score = request.data.get('score')
-    user_id = request.data.get('user_id')
-
-    if score is None or not (0 <= float(score) <= 100):
-        return Response({'error': 'Score must be between 0 and 100'}, status=status.HTTP_400_BAD_REQUEST)
-
-    try:
-        user = User.objects.get(id=user_id)
-    except User.DoesNotExist:
-        return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
-
-    rating, created = Rating.objects.update_or_create(
-        creation=creation,
-        user=user,
-        defaults={'score': float(score)}
-    )
-
-    return Response({'message': 'Rating saved', 'score': score})
+def rate_creation_view(request, creation_id):
+    creation = get_object_or_404(Creation, id=creation_id)
+    
+    if request.method == 'POST':
+        score = request.POST.get('score')
+        
+        if score is None or not (0 <= float(score) <= 100):
+            return render(request, 'HTML/rate_creation.html', {
+                'creation': creation,
+                'error': 'Оценката трябва да е между 0 и 100'
+            })
+        
+        Rating.objects.update_or_create(
+            creation=creation,
+            user=request.user,
+            defaults={'score': float(score)}
+        )
+        return redirect('leaderboard')
+    
+    context = {'creation': creation}
+    return render(request, 'HTML/rate_creation.html', context)
