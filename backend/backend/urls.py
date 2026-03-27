@@ -23,7 +23,10 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+    path('leaderboardes/', views.leaderboardes, name='leaderboardes'), 
+    path('profile/', views.profile, name='profile'),
+    path('newproject/', views.newproject, name='newproject'),
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_URL)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
