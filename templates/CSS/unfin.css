@@ -78,7 +78,6 @@
 .plus-btn:hover {
     background: #331e01;
 }
-/* ЛЯВА КОЛОНА */
 .left {
     display: flex;
     flex-direction: column;
@@ -150,7 +149,7 @@
 .piece{
     position: absolute;
     top: 4.7%; 
-    left: 88.5rem;
+    left: 15.5rem;
     width: 35rem;
     height: 35rem;
     z-index: 10; 
