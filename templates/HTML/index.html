@@ -16,32 +16,8 @@
     <main>
         <img id="tree" src="{% static 'Images/new_arrows.png' %}" alt="Picture of Wooden arrows.">
         <a id="lb_button" href="{% url 'leaderboard' %}">Leaderboards</a>
-        <button class="btn-login" onclick="openLogin()">LOGIN</button>
-        <button class="btn-register" onclick="openRegister()">REGISTER</button>
-        <div class="moda" id="modal">
-    <div class="modal-c" >
-    <div class="modal-conten">
-        <span class="close-btn" onclick="closeLogin()">×</span>
-        <div id="loginForm">
-            <h3 class="title">LOGIN</h3>
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <button>ENTER</button>
-
-            <span class="switch" onclick="showRegister()">
-                DON'T HAVE AN ACCOUNT?
-            </span>
-        </div>
-
-        <div id="registerForm" class="hidden">
-            <h3 class="title">Register</h3>
-            <input type="text" placeholder="Username">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <button onclick="registerUser()">REGISTRATION</button>
-
-            <span class="switch" onclick="showLogin()">
-                HAVE AN ACCOUNT?
+        <a class="btn-login" href="{% url 'login' %}">LOGIN</a>
+        <a class="btn-register" href="{% url 'register' %}">REGISTER</a>
             </span>
         </div>
     </div>
@@ -50,45 +26,4 @@
     </main>
 
 </body>
-<script>
-    function openModal() {
-    document.getElementById("modal").style.display = "block";
-    document.getElementById("tree").style.display = "none";
-}
-    function closeLogin() {
-    document.getElementById("modal").style.display = "none";
-     document.getElementById("tree").style.display = "block"; 
-}
-    function showRegister() {
-    document.getElementById("loginForm").classList.add("hidden");
-    document.getElementById("registerForm").classList.remove("hidden");
-}
-window.onload = function() {
-    showLogin();
-}
-function openLogin() {
-    openModal();
-    showLogin();
-}
-
-function openRegister() {
-    openModal();
-    showRegister();
-}
-    function showLogin() {
-    document.getElementById("registerForm").classList.add("hidden");
-    document.getElementById("loginForm").classList.remove("hidden");
-}
-    function openProfile() {
-    document.getElementById('profileBox').style.display = 'block';
-
-}
-    function closeProfile() {
-    document.getElementById('profileBox').style.display = 'none';
-}
-    function openLoginFromProfile() {
-    closeProfile();
-    openModal(); 
-}
-</script>
 </html>

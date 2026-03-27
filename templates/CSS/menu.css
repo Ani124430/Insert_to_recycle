@@ -45,13 +45,14 @@ main{
     top: 27rem;
     left: 48rem;
     position: absolute;
-     background-color: rgba(255, 255, 255,0);
+    background-color: rgba(239, 14, 14, 0);
     padding: 1rem 2.1rem;
     color: #000000;
     font-family: 'Pixel';
     font-size: 4rem;
     cursor: pointer;
     border: none;
+    text-decoration: none;
 }
 
 
