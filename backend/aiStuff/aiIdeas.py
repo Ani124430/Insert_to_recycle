@@ -1,4 +1,4 @@
-from django.http import Jsonresponse
+
 import random
 import base64
 import mimetypes
@@ -6,7 +6,7 @@ import os
 import re
 import anthropic
 import time
-client = anthropic.Anthropic(api_key=os.environ.get('ANTHROPIC_API_KEY', ''))
+client = anthropic.Anthropic(api_key=os.environ.get("api"))
 
 def decode(image):
     ext = image.rsplit('.', 1)[-1].lower()
@@ -27,7 +27,7 @@ def mockResponse():
     time.sleep(0.5) 
     return responses
 
-def score_reuse_result(waste_path, result_path):
+def scoreRes(waste_path, result_path):
     score = random.randint(40, 95)
     explanations = [
         "Impressive transformation — the item was given a completely new purpose with clear effort.",
@@ -43,10 +43,10 @@ def score_reuse_result(waste_path, result_path):
     ]
     return {'score': score, 'explanation': random.choice(explanations)}
 
-def giveidea(image_path, use_mock=True):
+def giveIdea(image_path, use_mock=True):
     if use_mock:
         return mockResponse()
-    
+    print(image_path)
     try:
         base64_string, media_type = decode(image_path)
         
@@ -71,13 +71,13 @@ def giveidea(image_path, use_mock=True):
                 }
             ]
         }
-
+        print(message_data)
         response = client.messages.create(
             model='claude-3-5-sonnet-20240620', 
             max_tokens=1024,
             messages=[message_data]
         )
-
+        print(response)
         text = response.content[0].text.strip()
         lines = [line.strip() for line in text.split('\n') if line.strip()]
         
@@ -90,6 +90,7 @@ def giveidea(image_path, use_mock=True):
         return ideas[:5]
 
     except Exception as e:
+        print("muahahahah")
         print(f"Error: {e}")
         return ["Error: AI was unable to process the image."]
 """

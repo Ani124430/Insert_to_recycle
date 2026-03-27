@@ -26,6 +26,7 @@ urlpatterns = [
     path('register/', include('register.urls')),
     path('leaderboard/', include('leaderboard.urls')),  
     path('profile/', include('saveuserinfo.urls')),
+    
 ]
 
 if settings.DEBUG:
