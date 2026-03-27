@@ -10,7 +10,7 @@
 
 .logo {
     color: white;
-    font-size: 3.5rem;
+    font-size: 2.8rem;
     justify-self: start;
 }
 
@@ -78,9 +78,10 @@
     cursor: pointer;
     color: white;
     font: inherit;
+    font-size: 1.6rem;
 }
 
 
 .button-logout:hover{
-    color: #000000;
+    color: #291707;
 }

@@ -52,13 +52,13 @@ main{
 
 
 #lb_button2 {
-     top: 41.5rem;
+    top: 41.5rem;
     left: 45rem;
     position: absolute;
     font-size: 4rem;
     text-decoration: none;
     color: rgb(0, 0, 0);
-     transform: rotate(8deg);
+    transform: rotate(8deg);
 }
 
 
@@ -70,75 +70,3 @@ main{
 #lb_button2 :hover {
     color: #5a4420;
 }
-
-
-.moda {
-    display: block;
-    position: fixed;
-    top: 20%;
-    left: 37%;
-    width: 100%;
-    height: 100%;
-}
-
-
-.modal-c{
-    position: relative;
-    width: 32rem;
-    height: 44rem;
-    background: rgba(57, 33, 6, 0.764);
-}
-
-
-.modal-conten {
-    background-image: url(../Images/Parchment\ 6\ stock\ photo_\ Image\ of\ rough\,\ paint\,\ frame\,\ ragged\ -\ 567220.png);
-    background-repeat: no-repeat;
-    position: absolute;
-    background-size:cover;
-    padding: 3rem;
-    text-align: center;
-    height: 37rem;
-}
-
-
-.modal-conten input {
-    width: 80%;
-    padding: 1.2rem;
-    margin: 0.7rem 0;
-    background: #3e2f15e0;
-    border: 0.2rem solid #3e2b0b;
-    color: #000000;
-    font-family: 'Minecraft';
-    font-size: 1.2rem;
-}
-
-
-.modal-conten button {
-    margin-top: 1.2rem;
-    padding: 0.8rem 2rem;
-    background: #3e2f15e0;
-    border: 0.2rem solid #3e2b0b;
-    color: #050505;
-    font-family: 'Minecraft';
-    font-size: 1.4rem;
-    cursor: pointer;
-    margin-bottom: 1.5rem;
-}
-
-
-.modal-conten button:hover {
-    background: #3e2b0b;
-    color: white;
-}
-
-.close-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 2rem;
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-}
-
-
