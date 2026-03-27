@@ -62,12 +62,12 @@ main{
 }
 
 
-.btn-login:hover {
+#lb_button1 :hover {
     color: #5a4420;
 }
 
 
-.btn-register:hover {
+#lb_button2 :hover {
     color: #5a4420;
 }
 
@@ -101,21 +101,12 @@ main{
 }
 
 
-.title {
-    font-family: 'Minecraft';
-    font-size: 3rem;
-    color: #070707;
-    margin: 2.5rem auto 2.5rem auto;
-    display: inline-block;
-}
-
-
 .modal-conten input {
     width: 80%;
     padding: 1.2rem;
     margin: 0.7rem 0;
-    background: #3e2f15;
-    border: 0.2rem solid #d9bc8c;
+    background: #3e2f15e0;
+    border: 0.2rem solid #3e2b0b;
     color: #000000;
     font-family: 'Minecraft';
     font-size: 1.2rem;
@@ -125,34 +116,20 @@ main{
 .modal-conten button {
     margin-top: 1.2rem;
     padding: 0.8rem 2rem;
-    background: rgb(61, 46, 21);
-    border: 0.2rem solid #d9bc8c;
+    background: #3e2f15e0;
+    border: 0.2rem solid #3e2b0b;
     color: #050505;
     font-family: 'Minecraft';
     font-size: 1.4rem;
     cursor: pointer;
+    margin-bottom: 1.5rem;
 }
 
 
 .modal-conten button:hover {
-    background: #5a4420;
+    background: #3e2b0b;
+    color: white;
 }
-
-
-
-.switch {
-    display: block;
-    margin-top: 1rem;
-    color: #0c0c0c;
-    font-family: 'Minecraft';
-    cursor: pointer;
-}
-
-
-.switch:hover{
-    color: rgb(136, 73, 2);
-}
-
 
 .close-btn {
     position: absolute;
