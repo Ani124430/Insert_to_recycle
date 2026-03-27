@@ -10,67 +10,7 @@ body {
     background: #1a1a1a;
 }
 
-.header {
-    display: grid;
-    grid-template-columns: 1.5fr 2fr 1fr;
-    align-items: center;
-    background: rgb(67, 43, 21);
-    padding: 1rem 2rem;
-}
 
-.logo {
-    font-size: 2.5rem;
-    color: white;
-}
-
-.nav {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-}
-
-.nav a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.5rem;
-    transition: 0.3s;
-}
-
-.nav a:hover {
-    color: #ffb347;
-}
-
-.user {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    justify-self: end;
-}
-
-.profile-pic {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    background: url(../Images/1000005692.png) center/cover;
-    border: 0.2rem solid #000;
-}
-
-.plus-btn {
-    font-size: 2rem;
-    width: 3rem;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.plus-btn:hover {
-    background: #8a5a2b;
-}
 
 main {
     background-image: url(../Images/1000005692.png);
@@ -115,7 +55,7 @@ input[type="file"] {
 
 #btn-upload-file {
     background: rgb(119, 89, 39);
-    padding: 1rem 2rem;
+    padding: 3rem 6rem;
     border-radius: 0.7rem;
     font-size: 2rem;
     cursor: pointer;
@@ -126,7 +66,7 @@ input[type="file"] {
 }
 
 #btn-upload-file:hover {
-     background: rgb(69, 52, 23);
+    background: rgb(69, 52, 23);
     color: white;
 }
 
