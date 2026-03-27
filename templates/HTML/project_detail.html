@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ project.title }}</title>
+    <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
+    <style>
+        .project-container { max-width: 700px; margin: 80px auto; padding: 2rem; }
+        .project-images { display: flex; gap: 2rem; margin: 1.5rem 0; }
+        .project-images img { max-width: 100%; flex: 1; }
+        .project-images .placeholder { flex: 1; background: #eee; display: flex; align-items: center; justify-content: center; min-height: 200px; }
+        .state-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.85rem; }
+        .state-draft { background: #fff3cd; color: #856404; }
+        .state-finished { background: #d1e7dd; color: #0f5132; }
+    </style>
+</head>
+<body>
+    {% include "HTML/navbar.html" %}
+    <div class="project-container">
+        <h1>{{ project.title }}</h1>
+        <p>
+            <span class="state-badge state-{{ project.state }}">{{ project.get_state_display }}</span>
+            &nbsp; By: {{ project.user.username }} &nbsp; {{ project.recordedTime|date:"d M Y" }}
+        </p>
+        {% if project.desc %}<p>{{ project.desc }}</p>{% endif %}
+
+        <div class="project-images">
+            <div>
+                <h3>Before</h3>
+                {% if project.oldPic %}
+                <img src="{{ project.oldPic.url }}" alt="Before">
+                {% endif %}
+            </div>
+            <div>
+                <h3>After</h3>
+                {% if project.newPic %}
+                <img src="{{ project.newPic.url }}" alt="After">
+                {% else %}
+                <div class="placeholder">Not finished yet</div>
+                {% endif %}
+            </div>
+        </div>
+
+        {% if project.state == 'draft' and request.user == project.user %}
+        <a href="{% url 'finish_project' project.id %}">
+            <button>Upload Final Photo</button>
+        </a>
+        {% endif %}
+
+        <p><a href="{% url 'profile_detail' username=project.user.username %}">Back to profile</a></p>
+    </div>
+</body>
+</html>

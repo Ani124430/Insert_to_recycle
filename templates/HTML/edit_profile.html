@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="{% static 'CSS/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
+    <style>
+        .form-container { max-width: 500px; margin: 80px auto; padding: 2rem; }
+        .form-container textarea { width: 100%; height: 120px; padding: 0.5rem; margin-bottom: 1rem; }
+        .form-container input[type="file"] { margin-bottom: 1rem; }
+        .form-container button { width: 100%; padding: 0.75rem; cursor: pointer; }
+        .current-avatar { max-width: 100px; border-radius: 50%; margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    {% include "HTML/navbar.html" %}
+    <div class="form-container">
+        <h2>Edit Profile</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% if profile.avatar %}
+            <img src="{{ profile.avatar.url }}" alt="Current avatar" class="current-avatar">
+            {% endif %}
+            <label for="avatar">Profile Picture:</label>
+            <input type="file" id="avatar" name="avatar" accept="image/*">
+
+            <label for="bio">Bio:</label>
+            <textarea id="bio" name="bio">{{ profile.bio }}</textarea>
+
+            <button type="submit">SAVE CHANGES</button>
+        </form>
+        <p><a href="{% url 'profile_detail' username=request.user.username %}">Back to profile</a></p>
+    </div>
+</body>
+</html>
