@@ -2,6 +2,8 @@
 
 # Python
 backend/backend/__pycache__/settings.cpython-313.pyc
+backend/backend/__pycache__
+backend/register/__pycache__
 __pycache__/
 *.py[cod]
 *.pyc
