@@ -5,184 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/second_pic.css' %}">
     <title>Insert to recycle</title>
 </head>
-<style>
 
-@font-face {
-    font-family: 'Pixel';
-    src: url("{% static 'Images/Minecraft.ttf' %}") format('truetype');
-    font-weight: 100 700;
-    font-style: normal;
-}
-
-
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Pixel';
-}
-
-
-body{
-    margin: 0rem;
-    font-family: 'Pixel';
-}
-
-
-main {
-    background-image: url("../Images/1000005692.png ");
-    background-size: cover;
-    min-height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10rem;
-}
-
-
-.top-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.left {
-    width: 45rem;
-    height: 44rem;
-    background: rgba(127, 103, 65, 0.753);
-    border-radius: 15px;
-
-    display: flex;
-    flex-direction: column;
-}
-
-
-.top-row {
-    margin-top: 2.5rem;
-    display: flex;
-    flex-direction: row;
-    justify-self: space-evenly;
-}
-
-
-.tag {
-    width: 18rem;
-    height: 18rem;
-    border: solid 0.3rem rgb(79, 59, 30);
-}
-.tag1{
-    background-color: rgba(79, 59, 30, 0.528);
-    height: 18rem;
-    width: 18rem;
-    border: solid 0.3rem rgb(79, 59, 30);
-}
-
-
-.ai-box {
-    width: 32rem;
-    height: 42rem;
-    background: rgba(41, 23, 7, 0.9);
-    border-radius: 1.2rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    margin-right: 9rem;
-}
-
-#ai {
-    color: white;
-    font-size: 3rem;
-}
-
-#ai-answear {
-    color: white;
-    text-align: center;
-}
-
-.img_ai_response {
-    height: 40rem;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    opacity: 0.8;
-}
-.cloud {
-    position: absolute;
-    width: 20rem;
-    top: -7rem;
-    right: -13rem;
-    filter: drop-shadow(0 1rem 1rem rgba(0,0,0,0.5));
-}
-.cloud1 {
-    position: absolute;
-    width: 25rem;
-    top: 64%;
-    left: 45%;
-    filter: drop-shadow(0 1rem 1rem rgba(0,0,0,0.5));
-}
-
-
-input[type="file"] {
-    display: none;
-}
-
-#btn-upload-file {
-
-    background: rgb(119, 89, 39);
-    padding: 2.5rem 2rem;
-    border-radius: 0.7rem;
-    font-size: 2rem;
-    cursor: pointer;
-    text-align: center;
-    border: none;
-    color: white;
-    position: relative;
-    left: 0.4rem;
-    top: 8rem;
-    width: 6rem;
-}
-
-#btn-upload-file:hover {
-    background: rgb(69, 52, 23);
-}
-.ai {
-    position: absolute;
-    top: 26rem;
-    left: 6rem;
-    width: 20rem;
-    transform: rotate(90deg) translateY(-50%);
-}
-.button1{
-    position: absolute; 
-    width: 20rem;
-    top:80%;
-    left: 75%;
-}
-.button{
-    text-decoration: none;
-    width: 16rem;
-    height: 6rem;
-    top:83%;
-    left: 76.7%;
-    position: absolute;
-    cursor: pointer;
-    border:none;
-    background-color: #00000000;
-    font-size: 2rem;
-}
-.p :hover{
-    color: #52311a;
-}
-</style>
 <body>
 
     {% include "HTML/navbar.html" %}
 
 <main>
-<div class="left">
+    <div class="left">
     <div class="top-row">
         <div>
             {% if project.oldPic %}
@@ -196,36 +28,35 @@ input[type="file"] {
                 {% if project.newPic %}
                 <img src="{{ project.newPic.url }}" style="max-width:100%;max-height:12rem;object-fit:cover;border-radius:4px;">
                 {% endif %}
-                <p style="color:white;margin-top:0.5rem;font-size:1.2rem;">Uploaded!</p>
+                <p style="color:rgb(55, 31, 6);margin-top:0.5rem;font-size:1.2rem;">Uploaded!</p>
             {% else %}
             <form method="post" action="{% url 'finish_project' project.id %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 <label for="image_input" id="btn-upload-file">Upload Result</label>
                 <input type="file" id="image_input" name="newPic" accept="image/*" required>
-                <img id="preview" src="#" alt="Preview" style="display:none;max-width:90%;max-height:8rem;object-fit:cover;margin:0.5rem auto;border-radius:4px;">
-                <button type="submit" id="analyze-btn" style="display:none;margin:0.5rem auto;padding:0.5rem 1.5rem;cursor:pointer;">Get AI Score</button>
+                <img id="preview" src="#" alt="Preview" style="display:none;max-width:100%;max-height:10rem;object-fit:cover;margin:0.5rem auto;border-radius:4px;">
+                <button type="submit" id="analyze-btn" style="display:none;margin:0.5rem auto;padding:0.5rem 1.5rem;cursor:pointer; font-family:'Pixel'; font-size: 1rem; background-color: rgba(52, 30, 8, 0.785); border: none;">Get AI Score</button>
             </form>
             {% endif %}
         </div>
     </div>
-    <img src="{% static 'Images/ai_tag.png' %}" class="ai">
+    <img src="{% static 'Images/ai_tag.png' %}" class="ai"><p style="position: absolute; font-size: 2.2rem; top: 66%; left:19%; text-align: center;">Here you can upload<br> your picture with<br> the result and AI<br> will rate it</p></img>
+    <img src="{% static 'Images/cloud1.png' %}" class="cloud">
 </div>
-
-    <div class="ai-box">
-        <img src="{% static 'Images/cloud1.png' %}" class="cloud">
-        <div id="ai">AI Rating</div>
-        <div id="ai-answear">
-            {% if score is not None %}
+    <div class="ai-box" style="position: relative;">
+    <img src="{% static 'Images/ai_list1.png' %}" class="img_ai_response">
+    <div id="ai-answear">
+        {% if score is not None %}
+            <div>
                 <p style="font-size:4rem;font-weight:bold;margin:1rem 0;">{{ score }}<span style="font-size:2rem;">/100</span></p>
                 <p style="padding:0 1rem;line-height:1.6;">{{ explanation }}</p>
                 <p style="margin-top:2rem;">
-                    <a href="{% url 'profile_detail' username=request.user.username %}" style="color:white;text-decoration:underline;">Go to my profile →</a>
+                    <a href="{% url 'profile_detail' username=request.user.username %}" style="color: rgb(42, 24, 5);;text-decoration:underline;">Go to my profile →</a>
                 </p>
-            {% else %}
-                <img src="{% static 'Images/ai_list1.png' %}" class="img_ai_response">
-            {% endif %}
-        </div>
+            </div>
+        {% endif %}
     </div>
+</div>
     <img src="{% static 'Images/cloud1.png' %}" class="cloud1">
 
 <script>
@@ -237,19 +68,14 @@ input[type="file"] {
             const preview = document.getElementById('preview');
             preview.src = URL.createObjectURL(file);
             preview.style.display = 'block';
+            const uploadBtn = document.getElementById('btn-upload-file');
+        uploadBtn.style.display = 'none';
+
             document.getElementById('analyze-btn').style.display = 'block';
-            document.getElementById('btn-upload-file').textContent = 'Change Image';
         });
     }
-</script>
+    </script>
 
 </main>
-    <img src="{% static 'Images/button.png' %}" class="button1">
-      <button class="button">
-            <a href="{% url 'profile' %}"
-                style=" text-decoration: none; color: #000;"><p class="p">Save project</p>
-            </a>
-      </button>
-    </img>
 </body>
 </html>

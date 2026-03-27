@@ -34,7 +34,6 @@ main {
     position: relative
 }
 #imageForm {
-    display: flex;
     flex-direction: column;
     align-items: center;
 }

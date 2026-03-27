@@ -88,8 +88,10 @@ body {
     margin: 0;
      color: rgb(37, 18, 1);
     font-size: 2rem;
+    text-decoration: none;
 }
 .project-info p {
+    text-decoration: none;
     margin: 2px 0 0;
     font-size: 1.5rem;
     color: #cbd5e1;
@@ -157,8 +159,8 @@ body {
 }
 .cloud {
     position: absolute;
-    top: 45%; 
-    left: 50%;
+    top: 30%; 
+    left: 60%;
     width: 25rem;
     height: 30rem;
     z-index: 10; 
