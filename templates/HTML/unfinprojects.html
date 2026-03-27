@@ -1,9 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/finished.css">
+    <link rel="stylesheet" href="{% static 'CSS/unfin.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
 </head>
 <body>
     <style>
@@ -34,34 +36,20 @@
     </style>
     <div>
 
-   <div class="header">
-
-    <div class="logo">Insert to recycle</div>
-
-    <div class="nav">
-        <a href="#">Menu</a>
-        <a href="#">Leaderboard</a>
-          <a href="#">Profile</a>
-    </div>
-
-    <div class="user">
-        <div class="profile-pic"></div>
-         <a href="newproject.html" class="plus-btn">+</a>
-    </div>
-    <img src="../Images/piece_of_paper.png" class="piece">
-</div>
-    <img src="../Images/stamps1.png" class="stamp1">
-    <img src="../Images/cloud1.png" class="cloud">
+    {% include "HTML/navbar.html" %}
+    
+    <img src="{% static 'Images/stamps1.png' %}" class="stamp1">
+    <img src="{% static 'Images/cloud1.png' %}" class="cloud">
     <div class="left">
             <div class="card">
                 <h2>Unfinished Projects</h2>
                 <div class="project">
-                    <img src="../Images/1000005692.png" alt="Project 1">
+                    <img src="{% static 'Images/1000005692.png' %}" alt="Project 1">
                     <div class="project-info">
                          <h3>AI ideas</h3>
                         <p>Some ideas that AI gave you</p>
                     </div>
-                    <a href="../HTML/second_pic.html" class="finish-box">
+                    <a href="#" class="finish-box">
                     <span class="plus">+</span>
                      <p>Finish your project</p></a>
                 </div>

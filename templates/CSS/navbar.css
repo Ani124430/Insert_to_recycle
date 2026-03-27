@@ -7,11 +7,13 @@
     padding: 1rem 2rem;
 }
 
+
 .logo {
     color: white;
     font-size: 3.5rem;
     justify-self: start;
 }
+
 
 .nav {
     display: flex;
@@ -20,15 +22,18 @@
     justify-self: center;
 }
 
+
 .nav a {
     text-decoration: none;
     color: white;
     font-size: 1.7rem;
 }
 
+
 .nav a:hover {
     color: #291707;
 }
+
 
 .user {
     display: flex;
@@ -37,6 +42,7 @@
     justify-self: end; 
 }
 
+
 .profile-pic {
     width: 4.7rem;
     height: 4.7rem;
@@ -44,6 +50,7 @@
     background: url(../Images/1000005692.png) center/cover;
     border: 0.5rem solid rgb(43, 22, 4);
 }
+
 
 .plus-btn {
     font-size: 4rem;
@@ -59,6 +66,7 @@
     color: white;
     text-decoration: none;
 }
+
 
 .plus-btn:hover {
     background: #331e01;

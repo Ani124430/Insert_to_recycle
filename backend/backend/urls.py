@@ -26,6 +26,8 @@ urlpatterns = [
     path('leaderboardes/', views.leaderboardes, name='leaderboardes'), 
     path('profile/', views.profile, name='profile'),
     path('newproject/', views.newproject, name='newproject'),
+    path('finishedprojects/', views.finishedprojects, name='finishedprojects'),
+    path('unfinprojects/', views.unfinprojects, name='unfinprojects'),
 ]
 
 if settings.DEBUG:

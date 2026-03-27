@@ -116,10 +116,13 @@ input[type="file"] {
 #btn-upload-file {
     background: rgb(119, 89, 39);
     padding: 1rem 2rem;
-    border-radius: 10px;
-    cursor: pointer;
+    border-radius: 0.7rem;
     font-size: 2rem;
-    transition: 0.3s;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 11.5rem;
+    margin-bottom: 11.5rem;
+    margin-left: 2rem;
 }
 
 #btn-upload-file:hover {
