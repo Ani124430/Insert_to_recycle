@@ -21,49 +21,53 @@
         <p class="t">Your Profile</p>
         <div class="left">
             <div class="card">
-                <a class="projects-fin-unfin" href="{% url 'finishedprojects' %}">
-                    <h2 class="projects-fin-unfin-name">Finished Projects</h2>
-                </a>
-                <div class="project">
-                    <img src="{% static 'Images/1000005692.png' %}" alt="Project 1">
+                <h2 class="projects-fin-unfin-name">Finished Projects ({{ total_finished }})</h2>
+                {% for project in finished %}
+                <a href="{% url 'project_detail' project.id %}" class="project">
+                    {% if project.newPic %}
+                    <img src="{{ project.newPic.url }}" alt="{{ project.title }}">
+                    {% endif %}
                     <div class="project-info">
-                        <h3>Game UI</h3>
-                        <p>Пълна потребителска интерфейс система</p>
+                        <h3>{{ project.title }}</h3>
+                        {% if project.desc %}<p>{{ project.desc }}</p>{% endif %}
                     </div>
-                </div>
+                </a>
+                {% empty %}
+                <p>No finished projects yet.</p>
+                {% endfor %}
             </div>
             <div class="card">
-                <a class="projects-fin-unfin" href="{% url 'unfinprojects' %}">
-                    <h2 class="projects-fin-unfin-name">Unfinished Projects</h2>
-                </a>
-                <div class="project">
-                    <img src="{% static 'Images/1000005692.png' %}" alt="Project 3">
+                <h2 class="projects-fin-unfin-name">Unfinished Projects ({{ total_drafts }})</h2>
+                {% for project in drafts %}
+                <a href="{% url 'project_detail' project.id %}" class="project">
+                    {% if project.oldPic %}
+                    <img src="{{ project.oldPic.url }}" alt="{{ project.title }}">
+                    {% endif %}
                     <div class="project-info">
-                        <h3>Multiplayer Mode</h3>
-                        <p>Създаване на мултиплейър система</p>
+                        <h3>{{ project.title }}</h3>
+                        {% if project.desc %}<p>{{ project.desc }}</p>{% endif %}
                     </div>
-                </div>
+                </a>
+                {% empty %}
+                <p>No drafts yet.</p>
+                {% endfor %}
             </div>
         </div>
         </div>
         <div class="right">
             <div class="banner">
+                {% if profile.avatar %}
+                <img src="{{ profile.avatar.url }}" alt="{{ user.username }}" class="big-profile">
+                {% else %}
                 <div class="big-profile"></div>
+                {% endif %}
             </div>
 
             <div class="profile-info">
 
-                <p class="username">Yanichka_banichka</p>
-                <!--  <div>
-                    <p>Badges</p>
-                    <img>
-                    <img>
-                    <img>
-                    <img>
-                </div> -->
-                <p>Bio </p>
-                <p id="level">Level 1</p>
-                <button>Exit Profile</button>
+                <p class="username">{{ user.username }}</p>
+                {% if profile.bio %}<p>{{ profile.bio }}</p>{% endif %}
+                <a href="{% url 'update_profile' %}"><button>Edit Profile</button></a>
             </div>
         </div>
     </div>

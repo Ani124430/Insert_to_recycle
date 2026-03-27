@@ -1,39 +1,52 @@
-from django.shortcuts import render
-from aiIdeas import scoreRes, giveIdea
-from draftAndProjects.models import Project
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
+from .aiIdeas import giveIdea, score_reuse_result
+from draftsAndProjects.models import Project
+from leaderboard.models import Creation
+
+
 @login_required
-
-
 def postFunc(request):
-    if request == 'POST':
-        image = request.FILES.get('media/waste')
-        if image:
-            project = Project.objects.create(
+    if request.method == 'POST':
+        image = request.FILES.get('image')
+        title = request.POST.get('title', '')
+        desc = request.POST.get('desc', '')
+
+        if not image:
+            return render(request, 'HTML/newproject.html', {'error': 'Please upload an image.'})
+
+        project = Project.objects.create(
             oldPic=image,
             user=request.user,
-            state=0 
+            title=title,
+            desc=desc,
+            state='draft',
         )
-        image_path = project.oldPic.path
-        ai_ideas = giveIdea(image_path, use_mock=True)
-        print(ai_ideas)
-        return render(request, "frontend/new_with_AI.html", {"ideas": ai_ideas})
 
-    return JsonResponse({"status": "error", "message": "Method not allowed"}, status=405)
+        ideas = giveIdea(project.oldPic.path)
+        return render(request, 'HTML/newproject.html', {
+            'ideas': ideas,
+            'project': project,
+        })
 
-def getRating(request):
-    if request == 'POST':
-        imageNew = request.FILES.get('uploaded_recycled_image')
-        if imageNew:
-            if imageNew:
-                project = Project.objects.create(
-                    oldPic=imageNew,
-                    user=request.user,
-                    state=0 
-                )
-                
-                return JsonResponse({
-                    "status": 1, 
-                    "project_id": project.id
-                })
+    return render(request, 'HTML/newproject.html')
+
+
+@login_required
+def getRating(request, project_id):
+    project = get_object_or_404(Project, id=project_id, user=request.user)
+
+    if not project.newPic:
+        return JsonResponse({'error': 'Project has no finished image yet.'}, status=400)
+
+    result = score_reuse_result(project.oldPic.path, project.newPic.path)
+
+    Creation.objects.create(
+        user=request.user,
+        title=project.title or f'Project {project.id}',
+        image=project.newPic,
+        ai_score=result['score'],
+    )
+
+    return JsonResponse({'score': result['score'], 'explanation': result['explanation']})

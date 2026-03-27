@@ -185,29 +185,63 @@ input[type="file"] {
 <div class="left">
     <div class="top-row">
         <div>
+            {% if project.oldPic %}
+            <img src="{{ project.oldPic.url }}" class="tag" style="object-fit:cover;">
+            {% else %}
             <img src="{% static 'Images/1000005692.png' %}" class="tag">
+            {% endif %}
         </div>
-        <div class="tag1">
-            <form action="post" enctype="multipart/form-data">
-                <label for="image_input" id="btn-upload-file">
-                    Upload Image
-                </label>
-                <input type="file" id="image_input" required>
+        <div class="tag1" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
+            {% if score is not None %}
+                {% if project.newPic %}
+                <img src="{{ project.newPic.url }}" style="max-width:100%;max-height:12rem;object-fit:cover;border-radius:4px;">
+                {% endif %}
+                <p style="color:white;margin-top:0.5rem;font-size:1.2rem;">Uploaded!</p>
+            {% else %}
+            <form method="post" action="{% url 'finish_project' project.id %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="image_input" id="btn-upload-file">Upload Result</label>
+                <input type="file" id="image_input" name="newPic" accept="image/*" required>
+                <img id="preview" src="#" alt="Preview" style="display:none;max-width:90%;max-height:8rem;object-fit:cover;margin:0.5rem auto;border-radius:4px;">
+                <button type="submit" id="analyze-btn" style="display:none;margin:0.5rem auto;padding:0.5rem 1.5rem;cursor:pointer;">Get AI Score</button>
             </form>
+            {% endif %}
         </div>
     </div>
     <img src="{% static 'Images/ai_tag.png' %}" class="ai">
 </div>
 
     <div class="ai-box">
-         <img src="{% static 'Images/cloud1.png' %}" class="cloud">
+        <img src="{% static 'Images/cloud1.png' %}" class="cloud">
         <div id="ai">AI Rating</div>
-
         <div id="ai-answear">
-            <img src="{% static 'Images/ai_list1.png' %}" class="img_ai_response">
+            {% if score is not None %}
+                <p style="font-size:4rem;font-weight:bold;margin:1rem 0;">{{ score }}<span style="font-size:2rem;">/100</span></p>
+                <p style="padding:0 1rem;line-height:1.6;">{{ explanation }}</p>
+                <p style="margin-top:2rem;">
+                    <a href="{% url 'profile_detail' username=request.user.username %}" style="color:white;text-decoration:underline;">Go to my profile →</a>
+                </p>
+            {% else %}
+                <img src="{% static 'Images/ai_list1.png' %}" class="img_ai_response">
+            {% endif %}
         </div>
     </div>
-      <img src="{% static 'Images/cloud1.png' %}" class="cloud1">
+    <img src="{% static 'Images/cloud1.png' %}" class="cloud1">
+
+<script>
+    const input = document.getElementById('image_input');
+    if (input) {
+        input.addEventListener('change', function() {
+            const file = this.files[0];
+            if (!file) return;
+            const preview = document.getElementById('preview');
+            preview.src = URL.createObjectURL(file);
+            preview.style.display = 'block';
+            document.getElementById('analyze-btn').style.display = 'block';
+            document.getElementById('btn-upload-file').textContent = 'Change Image';
+        });
+    }
+</script>
 
 </main>
     <img src="{% static 'Images/button.png' %}" class="button1">
