@@ -12,3 +12,9 @@ def profile(request):
 
 def newproject(request):
     return render(request, 'HTML/newproject.html')
+
+def finishedprojects(request):
+    return render(request, 'HTML/finishedprojects.html')
+
+def unfinprojects(request):
+    return render(request, 'HTML/unfinprojects.html')
