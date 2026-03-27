@@ -19,7 +19,6 @@ main {
     justify-content: space-evenly;
     align-items: center;
     gap: 5rem;
-    padding: 2rem;
 }
 
 .left {
