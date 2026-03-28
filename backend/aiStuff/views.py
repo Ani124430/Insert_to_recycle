@@ -24,7 +24,7 @@ def postFunc(request):
             state='draft',
         )
 
-        ideas = giveIdea(project.oldPic.path)
+        ideas = giveIdea(project.oldPic.path, use_mock=True)
         return render(request, 'HTML/newproject.html', {
             'ideas': ideas,
             'project': project,
