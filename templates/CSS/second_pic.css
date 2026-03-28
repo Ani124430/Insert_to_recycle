@@ -69,7 +69,6 @@ main {
     height: 42rem;
     background: rgba(41, 23, 7, 0.9);
     border-radius: 1.2rem;
-    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -87,7 +86,6 @@ main {
     align-items: center; 
     text-align: center; 
     color: rgb(42, 24, 5); 
-    padding-left: 3rem;
     z-index: 2;
 }
 .img_ai_response {

@@ -57,7 +57,7 @@
         <div class="right">
             <div class="banner">
                 {% if profile.avatar %}
-                <img src="{{ profile.avatar.url }}" alt="{{ user.username }}" class="big-profile">
+                 <img src="{% static 'Images/dobri.jpg' %}"  class="big-profile">
                 {% else %}
                 <div class="big-profile"></div>
                 {% endif %}
@@ -66,8 +66,7 @@
             <div class="profile-info">
 
                 <p class="username">{{ user.username }}</p>
-                {% if profile.bio %}<p>{{ profile.bio }}</p>{% endif %}
-                <a href="#"><button>Edit Profile</button></a>
+                <p style="align-items: center;">Bio<br>"Always working on something new. I love turning ideas into reality."</p>
             </div>
         </div>
     </div>

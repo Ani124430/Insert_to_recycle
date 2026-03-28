@@ -135,7 +135,7 @@
     </div>
 
     {% if project.state == 'draft' and request.user == project.user %}
-        <a href="{% url 'finish_project' project.id %}"><button>Upload Final Photo</button></a>
+        <a style="display: block; margin-bottom: 1rem;" href="{% url 'finish_project' project.id %}"><button>Upload Final Photo</button></a>
     {% endif %}
 
     <a href="{% url 'profile_detail' username=project.user.username %}" class="back-link">Back to profile</a>
