@@ -22,9 +22,9 @@
             <label for="image_input" id="btn-upload-file">Upload Image</label>
             <input type="file" id="image_input" name="image" accept="image/*" required>
             <img id="preview" src="#" alt="Preview" style="display:none;max-width:90%;max-height:10rem;margin:0.5rem auto;display:none;border-radius:6px;">
-            <input type="text" name="title" placeholder="Title" style="display:block;width:80%;margin:0.5rem auto;padding:0.4rem;">
-            <input type="text" name="desc" placeholder="Description (optional)" style="display:block;width:80%;margin:0.5rem auto;padding:0.4rem;">
-            <button type="submit" id="analyze-btn" style="display:none;margin:0.5rem auto;padding:0.5rem 1.5rem;cursor:pointer;">Analyze</button>
+            <input type="text" name="title" placeholder="Title" style="display:block;width:80%;margin-top:4rem; margin-left: 2.2rem; padding:0.6rem; background-color: rgba(91, 56, 17, 0.796); border: none;">
+            <input type="text" name="desc" placeholder="Description (optional)" style="display:block;width:80%;margin:0.5rem auto;padding:0.6rem; background-color: rgba(91, 56, 17, 0.796); border: none;">
+            <button type="submit" id="analyze-btn" style="display:none;margin:0.5rem auto;padding:0.5rem 1.5rem;cursor:pointer; background-color: rgba(91, 56, 17, 0.796); border: none;">Analyze</button>
         </form>
         {% if error %}<p style="color:red;text-align:center;margin-top:0.5rem;">{{ error }}</p>{% endif %}
         <script>
