@@ -10,6 +10,6 @@ body{
     margin: 0rem;
     font-family: 'Pixel';
     background-image: url(../Images/1000005692.png);
-    background-size: contain;
+    background-size: cover;
      background-attachment: fixed;
 }
